@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img id="img_ball" src="assests/images/ball.png" alt="ball">
+    <img id="img_brick" src="assests/images/brick3.png" alt="brick">
+    <img id="img_boostBall" src="assests/images/powerups_speed.webp" alt="brick">
+    <img id="img_boostPaddle" src="assests/images/boost-512.webp" alt="brick">
+    <canvas id="gameScreen" width="800" height="600"></canvas>
+    <div class="results">
+        <div class="levels">
+            <h2>Completed Levels: <span id="completedLevels">0</span></h2>
+        </div>
+        <div class="bricks">
+            <h2>Broken Bricks: <span id="brickCount">0</span></h2>
+        </div>
+    </div>
+
+    <script type="module" src="src/index.js"></script>
+</body>
+</html>
