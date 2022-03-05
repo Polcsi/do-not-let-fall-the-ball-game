@@ -7,7 +7,7 @@ export default class PowerUp {
 
     this.position = {
       x: Math.floor(Math.random() * (this.game.gameWidth - this.width)),
-      y: 20,
+      y: Math.floor(Math.random() * 400) + 40,
     };
     this.markedForDeletion = false;
   }

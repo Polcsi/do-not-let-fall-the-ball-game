@@ -33,6 +33,7 @@ export default class Ball {
     this.position.y += this.speed.y;
     new Computer(this.paddle, this);
 
+    console.log(this.speed);
     // wall on left or right
     if (this.position.x + this.size > this.gameWidth || this.position.x < 0) {
       this.speed.x = -this.speed.x;

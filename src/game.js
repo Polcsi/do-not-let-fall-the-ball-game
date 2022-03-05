@@ -4,6 +4,7 @@ import Brick from "./brick.js";
 import Ball from "./ball.js";
 import BoostBall from "./boostBall.js";
 import BoostPaddle from "./boostPaddle.js";
+import GrowPaddle from "./growPaddle.js";
 import Computer from "./computer.js";
 import { buildLevel, randomLevel } from "./levels.js";
 
@@ -27,6 +28,10 @@ export default class Game {
       this,
       document.getElementById("img_boostPaddle")
     );
+    this.growPaddle = new GrowPaddle(
+      this,
+      document.getElementById("img_growPaddle")
+    );
     this.gameObjects = [];
     this.gameState = GAMESTATE.MENU;
     this.paddle = new Paddle(this);
@@ -47,6 +52,7 @@ export default class Game {
       this.paddle,
       this.boostBall,
       this.boostPaddle,
+      this.growPaddle,
       ...bricks,
     ];
   }
@@ -75,6 +81,7 @@ export default class Game {
         this.paddle,
         new BoostBall(this, document.getElementById("img_boostBall")),
         new BoostPaddle(this, document.getElementById("img_boostPaddle")),
+        new GrowPaddle(this, document.getElementById("img_growPaddle")),
         ...bricks,
       ];
       Game.completedLeveles++;
