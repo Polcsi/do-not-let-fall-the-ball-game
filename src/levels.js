@@ -1,4 +1,5 @@
-import Brick from "./brick.js";
+import StandardBrick from "./oneHitBrick.js";
+import HarderBrick from "./twoHitBrick.js";
 
 export function buildLevel(game, level) {
   let bricks = [];
@@ -10,7 +11,26 @@ export function buildLevel(game, level) {
           x: 80 * brickIndex,
           y: 24 * rowIndex + 80,
         };
-        bricks.push(new Brick(game, position));
+        bricks.push(
+          new StandardBrick(
+            game,
+            position,
+            document.getElementById("img_brick")
+          )
+        );
+      }
+      if (brick === 2) {
+        let position = {
+          x: 80 * brickIndex,
+          y: 24 * rowIndex + 80,
+        };
+        bricks.push(
+          new HarderBrick(
+            game,
+            position,
+            document.getElementById("img_brick_harder")
+          )
+        );
       }
     });
   });
@@ -23,7 +43,7 @@ function generateRandomLevel() {
   for (let i = 0; i < Math.floor(Math.random() * 12) + 5; i++) {
     let bricks = [];
     for (let j = 0; j < 10; j++) {
-      bricks = [...bricks, Math.floor(Math.random() * 2)];
+      bricks = [...bricks, Math.floor(Math.random() * 3)];
     }
     level = [...level, bricks];
   }
